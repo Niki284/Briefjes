@@ -1,0 +1,315 @@
+@import "variables";
+
+/* Algemene Stijlen */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $primary-color;
+  color: $tertiary-color;
+  font-family: Chivo, sans-serif;
+  font-size: $font-size-m;
+}
+
+main{
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+section{
+  padding: 4rem 0;
+}
+
+
+h1 {
+  font-family: Chivo, sans-serif;
+  font-size: $font-size-xl;
+  font-weight: 900;  
+}
+
+/* Container voor layout */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Skip link styles */
+.skip-link {
+  position: absolute;
+  z-index: 1000;
+  top: 5px;
+  left: 5px;
+  padding: 0.5rem 1rem;
+  transform: translateY(-200%);
+  transition: transform 0.3s ease;
+  border-radius: 4px;
+  background-color: $tertiary-color;
+  color: $primary-color;
+  font-size: $font-size-m;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+  outline: 2px solid $primary-color;
+}
+
+
+/* Buttons */
+.button-group {
+  .btn {
+    display: inline-block;
+    padding: .8rem 1.6rem;
+    transition: transform 0.3s ease;
+    border: none;
+    border-radius: 50px;
+    font-family: Chivo, sans-serif;
+    font-size: $font-size-m;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+
+    &.primary {
+      background-color: $secondary-color;
+      color: $tertiary-color;
+    }
+
+    &.secondary {
+      background-color: $tertiary-color;
+      color: $primary-color;
+    }
+
+    &:hover {
+      transform: translateY(-5px) !important;
+    }
+  }
+}
+
+/* Footer */
+.footer {
+  position: fixed;
+  bottom: 0;
+  align-items: center;
+  width: 100%;
+  margin-top: auto;
+  padding: 1rem 0;
+  background-color: $tertiary-color;
+  color: white;
+  text-align: center;
+
+  ul {
+    list-style: none;
+
+    li {
+      display: inline;
+      margin: 0 1rem;
+
+      a {
+        color: white;
+        text-decoration: none;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+/* Header */
+.header {
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ddd;
+  background-color: $tertiary-color;
+
+  .logo {
+    color: $primary-color;
+    font-size: $font-size-m;
+    font-weight: bold;
+
+    img {
+      width: 80px;
+    }
+  }
+
+  // Overlay
+  .menu-overlay {
+    display: flex;
+    visibility: hidden;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    padding-left: 3rem;
+    transform: translateY(-100%);
+    transition: opacity 0.4s ease, transform .8s ease;
+    opacity: 0;
+    background-color: $tertiary-color;
+
+    &.active {
+      visibility: visible;
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    &.inactive {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+
+    .menu-content {
+      text-align: left;
+
+      .menu-nav {
+        list-style: none;
+
+        li {
+          margin: 2rem 0;
+
+          a{
+            border: none;
+            background: none;
+            color: $primary-color;
+            font-size: $font-size-xl;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+
+            &:hover {
+              color: $secondary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Hamburger-menu Animatie
+  .hamburger {
+    display: flex;
+    position: relative;
+    z-index: 1000;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    border: none;
+    background-color: $tertiary-color;
+    cursor: pointer;
+
+    .bar {
+      width: 100%;
+      height: 3px;
+      transition: all 0.3s ease;
+      background-color: $primary-color;
+    }
+
+    &.active {
+      .bar:nth-child(1) {
+        transform: translateY(11px) rotate(45deg);
+      }
+
+      .bar:nth-child(2) {
+        opacity: 0;
+      }
+
+      .bar:nth-child(3) {
+        transform: translateY(-11px) rotate(-45deg);
+      }
+    }
+  }
+
+  .nav {
+    display: none;
+  }
+}
+
+/* Media Queries - Tablet en groter */
+@media (width >= 768px) {
+  .header {
+    .logo {
+      font-size: $font-size-l;
+
+      img {
+        width: 120px;
+      }
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+
+      .nav-list {
+        display: flex;
+        list-style: none;
+
+        li {
+          margin: 0 1rem;
+
+          a {
+            position: relative;
+            color: $primary-color;
+            text-decoration: none;
+
+            &:hover {
+              color: $primary-color;
+            }
+
+            &::after {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              height: 2px;
+              transform: scaleX(0);
+              transform-origin: bottom right;
+              transition: transform 0.3s ease;
+              background-color: $primary-color;
+            }
+
+            &:hover::after {
+              transform: scaleX(1);
+              transform-origin: bottom left;
+            }
+          }
+        }
+      }
+    }
+
+    .hamburger {
+      display: none;
+    }
+  }
+}
+
+@media (width >= 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
+
+}
+
+@media (width >= 1200px) {
+  .container {
+    padding: 0 3rem;
+  }
+
+}

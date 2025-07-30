@@ -1,0 +1,44 @@
+@import "variables";
+
+.dashboard {
+  height: 90vh;
+}
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#taxi-rides-table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+
+  th, td {
+    padding: 10px;
+    border: 1px solid $tertiary-color;
+    text-align: left;
+  }
+
+  th {
+    background-color: $tertiary-color;
+    color: $primary-color;
+    font-weight: bold;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  tr:hover {
+    background-color: $tertiary-color;
+    color: $primary-color;
+  }
+
+  td {
+    font-size: 14px;
+  }
+
+
+}

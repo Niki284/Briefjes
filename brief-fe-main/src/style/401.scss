@@ -1,0 +1,39 @@
+.error-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 80vh;
+  gap: 40px;
+
+  .error-content {
+    width: 100%;
+
+    .error-text {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+  }
+
+  .error-image {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  @media (width <= 768px) {
+    flex-direction: column;
+    text-align: center;
+
+    .error-content {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .error-image {
+      width: 100%;
+    }
+  }
+}

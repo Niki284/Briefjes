@@ -1,0 +1,159 @@
+@import "variables";
+@import "formErrors";
+
+/* CTA Section */
+.cta {
+  .cta-intro {
+    width: 100%;
+    margin-bottom: 1.5rem;
+
+    h2 {
+      font-size: $font-size-l;
+      text-align: left;
+    }
+
+    p {
+      margin: 1rem 0;
+      color: #364670;
+      font-size: $font-size-m;
+      text-align: left;
+    }
+  }
+
+  .cta-image {
+    width: 100%;
+    border-radius: $image-radius;
+  }
+}
+
+.ride-booking {
+  .ride-booking-form {
+    width: 100%;
+    margin-bottom: 1rem;
+
+    h1 {
+      margin-bottom: 1.5rem;
+      color: $tertiary-color;
+      font-size: $font-size-2xl;
+      text-align: left;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+
+      .form-group {
+        margin-bottom: 1rem;
+
+        label {
+          display: block;
+          margin-bottom: 0.5rem;
+          color: $tertiary-color;
+          font-size: 1rem;
+          text-align: left;
+        }
+
+        input {
+          box-sizing: border-box;
+          width: 100%;
+          padding: 0.8rem;
+          border: none;
+          border-radius: 6px;
+          background-color: #f4f5f9;
+          color: #333;
+          font-size: 1rem;
+
+        }
+      }
+
+      /* Date and Time Group */
+      .datetime-group, .name-group {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+
+        .name-field,
+        .date-group,
+        .time-group {
+          width: 48%;
+
+          input {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+          }
+        }
+      }
+
+      /* Submit Button */
+      button {
+        margin-top: 1rem;
+        padding: 0.8rem 2rem;
+        transition: background-color 0.3s ease;
+        border: none;
+        border-radius: 6px;
+        background-color: $tertiary-color;
+        color: $primary-color;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $accent-color
+        }
+      }
+    }
+  }
+
+  .ride-booking-image {
+    width: 100%;
+    height: auto;
+    border-radius: $image-radius;
+  }
+}
+
+@media (width >= 768px) {
+  .ride-booking {
+    .ride-booking-content {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 3rem;
+    }
+
+    .ride-booking-image {
+      width: 100%;
+      max-width: 500px;
+      margin-top: 3rem;
+    }
+  }
+}
+
+@media (width >= 1024px) {
+  .cta {
+    .cta-content {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .cta-intro {
+      width: 50%;
+
+      h1 {
+        font-size: $font-size-2xl;
+      }
+
+      p {
+        font-size: $font-size-m;
+      }
+    }
+
+    .cta-image {
+      max-width: 500px;
+    }
+  }
+}

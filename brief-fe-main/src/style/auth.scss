@@ -1,0 +1,214 @@
+@import "variables";
+
+.wrapper-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @media (width >= 768px) {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.wrapper {
+  max-width: 500px;
+  padding: 30px;
+  overflow: hidden;
+  border-radius: 15px;
+  background: $primary-color;
+  box-shadow: 0 15px 20px rgb(0 0 0 / 10%);
+
+  @media (width >= 768px) {
+    flex: 1 1 50%;
+  }
+}
+
+.wrapper .title-text {
+  display: flex;
+  width: 200%;
+}
+
+.wrapper .title {
+  width: 50%;
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.wrapper .slide-controls {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  width: 100%;
+  height: 50px;
+  margin: 30px 0 10px;
+  overflow: hidden;
+  border: 1px solid lightgrey;
+  border-radius: 15px;
+}
+
+
+.slide-controls .slide {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  transition: all 0.6s ease;
+  color: $primary-color;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 48px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.slide-controls label.chauffeur {
+  color: $tertiary-color;
+}
+
+.slide-controls .slider-tab {
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  border-radius: 15px;
+  background: $tertiary-color;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+#chauffeur:checked ~ .slider-tab {
+  left: 50%;
+}
+
+#chauffeur:checked ~ label.chauffeur {
+  color: $primary-color;
+  cursor: default;
+  user-select: none;
+}
+
+#chauffeur:checked ~ label.klant {
+  color: $tertiary-color;
+}
+
+#klant:checked ~ label.chauffeur {
+  color: $tertiary-color;
+}
+
+#klant:checked ~ label.klant {
+  cursor: default;
+  user-select: none;
+}
+
+.wrapper .form-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.form-container .form-inner {
+  display: flex;
+  width: 200%;
+
+}
+
+.form-container .form-inner form {
+  width: 50%;
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-inner form .field {
+  width: 100%;
+  height: 50px;
+  margin-top: 40px;
+}
+
+.form-inner form .field input {
+  width: 100%;
+  height: 100%;
+  padding-left: 15px;
+  transition: all 0.3s ease;
+  border: 1px solid lightgrey;
+  border-bottom-width: 2px;
+  border-radius: 15px;
+  outline: none;
+  font-size: 17px;
+}
+
+.form-inner form .field input:focus {
+  border-color: $accent-color;
+}
+
+.form-inner form .field input::placeholder {
+  transition: all 0.3s ease;
+  color: #999;
+}
+
+form .field input:focus::placeholder {
+  color: $accent-color;
+}
+
+.form-inner form .pass-link {
+  margin-top: 5px;
+}
+
+.form-inner form .signup-link {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.form-inner form .pass-link a,
+.form-inner form .signup-link a {
+  color: $accent-color;
+  text-decoration: none;
+}
+
+.form-inner form .pass-link a:hover,
+.form-inner form .signup-link a:hover {
+  text-decoration: underline;
+}
+
+form .btn {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+form .btn .btn-layer {
+  position: absolute;
+  left: -100%;
+  width: 300%;
+  height: 100%;
+  transition: all 0.4s ease;
+  border-radius: 15px;
+  background: $tertiary-color;
+}
+
+form .btn:hover .btn-layer {
+  left: 0;
+}
+
+form .btn input[type="submit"] {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  padding-left: 0;
+  border: none;
+  border-radius: 15px;
+  background: none;
+  color: $primary-color;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+}
+

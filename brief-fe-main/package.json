@@ -1,0 +1,39 @@
+{
+  "name": "fullstack_intro_frontend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "type-check": "tsc --noemit",
+    "lint:scripts": "eslint .",
+    "lint:styles": "stylelint src/**/*.{css,scss}",
+    "lint": "pnpm lint:scripts && pnpm type-check && pnpm lint:styles",
+    "format:scripts": "eslint . --fix",
+    "format:styles": "stylelint src/**/*.{css,scss} --fix",
+    "format": "npm run format:scripts && npm run format:styles"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "eslint": "^9.17.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "globals": "^15.13.0",
+    "meow": "^9.0.0",
+    "prettier": "^3.4.2",
+    "sass": "^1.83.0",
+    "stylelint": "^16.12.0",
+    "stylelint-config-property-sort-order-smacss": "^10.0.0",
+    "stylelint-config-standard-scss": "^13.1.0",
+    "typescript": "~5.6.3",
+    "typescript-eslint": "^8.18.1",
+    "vite": "^6.0.3",
+    "vite-plugin-checker": "^0.8.0"
+  },
+  "dependencies": {
+    "jwt-decode": "^4.0.0",
+    "node": "^23.4.0"
+  }
+}

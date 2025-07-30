@@ -1,0 +1,80 @@
+@import "variables";
+
+.taxi-requests {
+  h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    text-align: left;
+  }
+
+  width: 100%;
+
+  .requests-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background-color: $tertiary-color;
+      color: $primary-color;
+      font-weight: bold;
+    }
+
+    td {
+      background-color: #fff;
+    }
+
+    .claim-button {
+      padding: 1rem 3rem;
+      border: none;
+      border-radius: 5px;
+      background-color: #28a745;
+      color: white;
+      font-size: $font-size-m;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #218838;
+      }
+    }
+  }
+
+  @media (width <= 768px) {
+    .requests-table {
+      thead {
+        display: none;
+      }
+
+      tr {
+        display: block;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+      }
+
+      td {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        padding: 10px;
+        border: none;
+        border-bottom: 1px solid #ddd;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        &::before {
+          content: attr(data-label);
+          flex-basis: 40%;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

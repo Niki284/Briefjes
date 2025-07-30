@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Success</title>
+  <link rel="icon" type="image/x-icon" href="../img/Logo.png">
+
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../../style/style.scss" />
+  <link rel="stylesheet" href="../../style/401.scss" />
+</head>
+<body>
+<!-- Skip link -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- Header -->
+<header class="header" role="banner">
+  <div class="container">
+    <div class="logo">
+      <a href="../">
+        <img src="../../img/Logo.png" alt="Downtown Cab Co. Logo" />
+      </a>
+    </div>
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <ul class="nav-list">
+        <li><a href="../">Home</a></li>
+      </ul>
+
+      <div class="button-group">
+        <a href="../login/index.html" class="btn secondary" aria-label="Log in">Inloggen</a>
+        <a href="../registreer/index.html" class="btn primary" aria-label="Sign up">Registreren</a>
+      </div>
+    </nav>
+
+    <!-- Hamburger Menu -->
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- Fullscreen Menu Overlay -->
+    <div class="menu-overlay" id="menu-overlay">
+      <div class="menu-content">
+        <nav>
+          <ul class="menu-nav">
+            <li><a href="../">Home</a></li>
+            <li><a href="/login/">Inloggen</a></li>
+            <li><a href="/registreer/">Registreren</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Main Content -->
+<main id="main-content">
+  <section>
+    <div class="container">
+      <div class="error-section">
+        <div class="error-content">
+          <h1 class="error-title">Gelukt!</h1>
+          <p class="error-text">Je account is nu compleet!</p>
+        </div>
+        <div class="error-image">
+          <img src="../../img/hero-image.png" alt="401 Error Image">
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <ul>
+      <li>
+        <a href="https://gta.fandom.com/wiki/Downtown_Cab_Co." class="footer-link" target="_blank"
+        >Onze Wiki Pagina</a
+        >
+      </li>
+    </ul>
+  </div>
+</footer>
+
+<script src="../ts/main.ts" type="module"></script>
+</body>
+</html>

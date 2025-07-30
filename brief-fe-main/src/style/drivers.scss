@@ -1,0 +1,63 @@
+$section-padding: 20px;
+$column-padding: 10px;
+$border-radius: 50%; // Cirkelvorm voor de profielfoto
+$image-size: 150px; // De grootte van de afbeeldingen (profielfoto en auto)
+
+// Container voor de sectie
+.driver-container {
+  display: flex;
+  justify-content: space-between; // Zorgt ervoor dat de kolommen aan beide uiteinden worden uitgelijnd
+  padding: $section-padding;
+
+  // Linker kolom (taximedewerker)
+  .left-column {
+    flex: 1; // Zorgt ervoor dat de kolom de beschikbare ruimte opvult
+    padding: $column-padding;
+    text-align: left; // Centreer de tekst en afbeelding in de kolom
+
+    img {
+      width: $image-size;
+      height: $image-size;
+      object-fit: cover; // Zorg ervoor dat de afbeelding proportioneel is
+      border-radius: $border-radius;
+    }
+
+    h2, p {
+      margin: 10px 0;
+    }
+  }
+
+  // Rechter kolom (auto-informatie)
+  .right-column {
+    display: flex;
+    flex: 1; // Zorgt ervoor dat de kolom de beschikbare ruimte opvult
+    flex-direction: column;
+    justify-content: space-between; // Verdeel de ruimte tussen de tekst en afbeelding
+    padding: $column-padding;
+
+    img {
+      width: 100%; // Vul de breedte van de kolom in
+      max-width: 300px; // Max breedte van de afbeelding (auto)
+      height: auto;
+      margin-top: 20px;
+    }
+
+    h3, p {
+      margin: 10px 0;
+    }
+  }
+
+  // Media query voor kleinere schermen (zoals tablet)
+  @media (width <= 768px) {
+    flex-direction: column; // Zorg ervoor dat de kolommen onder elkaar komen
+
+    .left-column, .right-column {
+      width: 100%; // Zorg ervoor dat de kolommen de volle breedte hebben
+      padding: $column-padding 0;
+    }
+
+    .right-column img {
+      margin-top: 10px;
+    }
+  }
+}

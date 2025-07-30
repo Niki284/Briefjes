@@ -1,0 +1,75 @@
+@import "variables";
+
+.error-summary {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid #f5c6cb;
+  border-radius: 0.25rem;
+  background-color: #f8d7da;
+  color: #721c24;
+  font-size: 0.9rem;
+
+  h2 {
+    margin-top: 0;
+    color: #721c24;
+    font-size: 1.1rem;
+  }
+
+  ul {
+    margin-top: 0.5rem;
+    padding-left: 0;
+    list-style: none;
+
+    li {
+      margin-bottom: 0.5rem;
+      transition: background-color 0.2s ease;
+      color: #721c24;
+
+    }
+  }
+}
+
+.success{
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid #e0f5c6;
+  border-radius: 0.25rem;
+  background-color: #e0f5c6;
+  color: #2f721c;
+  font-size: 0.9rem;
+
+  h2 {
+    margin-top: 0;
+    color: #2f721c;
+    font-size: 1.1rem;
+  }
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+label.invalid {
+  color: $error-color;
+}
+
+.field-error {
+  display: block;
+  margin-top: 0.25rem;
+  animation: fadein 0.3s ease-in-out;
+  color: $error-color;
+  font-size: 0.85rem;
+}
+
+@keyframes fadein {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
